@@ -102,7 +102,7 @@ def place_ordr(bot, chat_id, query):
         id[new].setdefault(k, {'quantity': v['quantity'], 'price': v['price']})
     with open('data/orders.json', 'w') as ord:
         json.dump(orders, ord)
-    clear_bask(chat_id)
+    clear_bask(bot, chat_id)
     bot.send_message(chat_id=chat_id, text='Order placed!')
     admins = readJson('data/admins.json')
     for i in admins.keys():
