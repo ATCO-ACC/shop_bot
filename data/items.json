@@ -1,0 +1,8 @@
+{"apples": {"name": "Яблоки", "price": 5.0, "measure": "kg", "in_stock": 10},
+  "books": {"name": "Книги", "price": 10.0, "measure": "item", "in_stock": 500},
+  "water": {"name": "Вода", "price": 2.0, "measure": "litre", "in_stock": 200},
+  "beer": {"name": "Пиво", "price": 3.0, "measure": "can", "in_stock": 1000},
+  "wine": {"name": "Вино", "price": 7.0, "measure": "bottle", "in_stock": 15},
+  "grapes": {"name": "Виноград", "price":  2.0, "measure":  "kg", "in_stock":  5},
+  "cockroaches": {"name": "Тараканы", "price":  0.0, "measure":  "unit", "in_stock":  1000000}
+}
