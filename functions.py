@@ -7,8 +7,11 @@ def readJson(file):
     return name
 
 
+basket = readJson('data/basket.json')
+orders = readJson('data/orders.json')
+
+
 def add(bot, item, chat_id):
-    basket = readJson('data/basket.json')
     for k, v in items.items():
         if item == v['name']:
             item = k
@@ -30,7 +33,6 @@ def add(bot, item, chat_id):
 
 
 def delete(bot, item, chat_id):
-    basket = readJson('data/basket.json')
     for k, v in items.items():
         if item == v['name']:
             item = k
@@ -56,8 +58,7 @@ def delete(bot, item, chat_id):
 
 
 def show_basket(bot, chat_id):
-    basket = readJson('data/basket.json')
-    if chat_id not in basket:
+    if chat_id not in basket.keys():
         bot.send_message(chat_id=chat_id, text='Your basket is empty :(', reply_markup=mmenu)
     else:
         text = ''
@@ -75,7 +76,6 @@ def show_basket(bot, chat_id):
 
 
 def clear_bask(bot, chat_id):
-    basket = readJson('data/basket.json')
     if chat_id not in basket:
         bot.send_message(chat_id=chat_id, text='Your basket is empty :(')
     else:
@@ -88,8 +88,6 @@ def clear_bask(bot, chat_id):
 # TODO Create new order for each place order action
 def place_ordr(bot, chat_id, query):
     chat = query.message.chat
-    basket = readJson('data/basket.json')
-    orders = readJson('data/orders.json')
     orders.setdefault(chat_id, {})
     id = orders[chat_id]
     id.setdefault('username', chat.username)
@@ -110,7 +108,6 @@ def place_ordr(bot, chat_id, query):
 
 
 def show_orders(bot, chat_id):
-    orders = readJson('data/orders.json')
     if orders != {}:
         for i in orders.values():
             text = f"User name: {i['username']} First name: {i['first_name']}\n"
