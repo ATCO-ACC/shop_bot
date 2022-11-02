@@ -3,7 +3,7 @@ import re
 from functions import *
 
 
-TOKEN = '5792806053:AAEQHQTNSN2GSlA9ZuFFzKmbi8UA4WUAyMI'
+TOKEN = ''
 bot = Bot(token=TOKEN)
 
 updater = Updater(token=TOKEN, use_context=True)
